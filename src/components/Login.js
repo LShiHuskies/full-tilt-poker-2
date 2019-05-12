@@ -7,12 +7,14 @@ import LoginForm from './LoginForm';
 
 const Login = () => {
   const handleSubmit = (values) => {
-    console.log(handleSubmit)
+    console.log(values)
   }
   return (
     <div>
       <Card>
-        Welcome to Full-Tilt Poker 2.0
+        <CardContent>
+          Welcome to Full-Tilt Poker 2.0
+        </CardContent>
       </Card>
       <Formik
         onSubmit={handleSubmit}
