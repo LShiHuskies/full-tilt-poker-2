@@ -7,25 +7,33 @@ const LoginForm = ({
   values,
   handleChange,
   handleBlur,
-  errors
+  errors,
+  touched
 }) => {
+  console.log(touched["First Name"]);
+  console.log(errors.firstName);
+  console.log(values);
   return (
-    <form onSubmit={handleSubmit} style={{ width: '50%', margin: 'auto' }}>
+    <form onSubmit={handleSubmit} style={{ width: '50%', margin: '5% auto' }}>
       <TextField
-        name="First Name"
+        name="firstName"
         label="First Name"
-        value={values.FirstName}
+        value={values.firstName}
         onChange={handleChange}
         onBlur={handleBlur}
-        fullWidth
+        helperText={touched.firstName && errors.firstName ? errors.firstName : null}
+        error={touched.firstName && errors.firstName ? true : false}
+        style={{ width: '50%' }}
       />
       <TextField
-        name="Last Name"
+        name="lastName"
         label="Last Name"
-        value={values.LastName}
+        style={{ width: '50%' }}
+        value={values.lastName}
         onChange={handleChange}
         onBlur={handleBlur}
-        fullWidth
+        helperText={touched.lastName && errors.lastName ? errors.lastName : null}
+        error={touched.lastName && errors.lastName ? true : false}
       />
       <TextField
         name="User Name"

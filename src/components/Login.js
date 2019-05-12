@@ -5,6 +5,22 @@ import { Card, CardContent } from '@material-ui/core/';
 
 import LoginForm from './LoginForm';
 
+const loginSchema = Yup.object().shape({
+  firstName: Yup
+    .string()
+    .required("Please Enter Your First Name."),
+  lastName: Yup
+    .string()
+    .required('Please Enter Your Last Name'),
+  userName: Yup
+    .string()
+    .required("Please Enter a User Name"),
+  password: Yup
+    .string()
+    .required("Password is required.")
+    .min(6, "Too Short")
+});
+
 const Login = () => {
   const handleSubmit = (values) => {
     console.log(values)
@@ -18,6 +34,7 @@ const Login = () => {
       </Card>
       <Formik
         onSubmit={handleSubmit}
+        validationSchema={loginSchema}
         render={formikProps => (
         <LoginForm
           {...formikProps}
