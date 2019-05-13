@@ -18,7 +18,14 @@ const loginSchema = Yup.object().shape({
   password: Yup
     .string()
     .required("Password is required.")
-    .min(6, "Too Short")
+    .min(6, "Too Short"),
+  confirmation: Yup
+    .string()
+    .required("Password Confirmation is required")
+    .min(6, "Too Short"),
+  email: Yup
+    .email('Email is not valid')
+    .required('Email is required')
 });
 
 const Login = () => {

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Field } from 'formik';
 import { TextField, Button } from '@material-ui/core/';
 
 const LoginForm = ({
@@ -10,20 +9,17 @@ const LoginForm = ({
   errors,
   touched
 }) => {
-  console.log(touched["First Name"]);
-  console.log(errors.firstName);
-  console.log(values);
   return (
     <form onSubmit={handleSubmit} style={{ width: '50%', margin: '5% auto' }}>
       <TextField
         name="firstName"
         label="First Name"
+        style={{ width: '50%' }}
         value={values.firstName}
         onChange={handleChange}
         onBlur={handleBlur}
         helperText={touched.firstName && errors.firstName ? errors.firstName : null}
         error={touched.firstName && errors.firstName ? true : false}
-        style={{ width: '50%' }}
       />
       <TextField
         name="lastName"
@@ -36,37 +32,45 @@ const LoginForm = ({
         error={touched.lastName && errors.lastName ? true : false}
       />
       <TextField
-        name="User Name"
+        name="userName"
         label="User Name"
         value={values.UserName}
         onChange={handleChange}
         onBlur={handleBlur}
+        helperText={touched.userName && errors.userName ? errors.userName : null}
+        error={touched.userName && errors.userName ? true : false}
         fullWidth
       />
       <TextField
-        name="Email"
+        name="email"
         label="Email"
         value={values.email}
         onChange={handleChange}
         onBlur={handleBlur}
+        helperText={touched.email && errors.email ? errors.email : null}
+        error={touched.email && errors.email ? true : false}
         fullWidth
       />
       <TextField
-        name="Password"
+        name="password"
         label="Password"
         type="password"
         value={values.password}
         onChange={handleChange}
         onBlur={handleBlur}
+        helperText={touched.password && errors.password ? errors.password : null}
+        error={touched.password && errors.password ? true : false}
         fullWidth
       />
       <TextField
-        name="Confirmation"
+        name="confirmation"
         label="Confirmation"
         type="password"
         value={values.confirmation}
         onChange={handleChange}
         onBlur={handleBlur}
+        helperText={touched.confirmation && errors.confirmation ? errors.confirmation : null}
+        error={touched.confirmation && errors.confirmation ? true : false}
         fullWidth
       />
       <Button
