@@ -7,7 +7,10 @@ const LoginForm = ({
   handleChange,
   handleBlur,
   errors,
-  touched
+  touched,
+  isValid,
+  setFieldvalue,
+  setFieldTouched,
 }) => {
   return (
     <form onSubmit={handleSubmit} style={{ width: '50%', margin: '5% auto' }}>
@@ -74,10 +77,14 @@ const LoginForm = ({
         fullWidth
       />
       <Button
+        type="submit"
         variant="contained"
         color="primary"
-        type="submit"
-      />
+        disabled={!isValid}
+        style={{ float: 'right', marginTop: '5%' }}
+      >
+      Submit
+      </Button>
     </form>
   )
 };
