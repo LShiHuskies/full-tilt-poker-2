@@ -33,14 +33,23 @@ const SignUp = ({ handleSubmit }) => {
           Welcome to Full-Tilt Poker 2.0
         </CardContent>
       </Card>
-      <div style={{fontSize: '14px', padding: '7px',
+      {/* <div style={{fontSize: '14px', padding: '7px',
            color: 'black', width: '300px', fontHeight: 'normal', fontStretch: 'normal',
           lineHeight: 'normal', letterSpacing: '-0.2px', textAlign: 'right', position: 'absolute',
           float: 'left', top: '1.5%', display: 'inline', right: '0.5%'}}>
-          <div style={{display: 'inline', position: 'absolute', top: '100%', left: '0%', right: '35%'}}>Need to Create an Account?</div>
+          <div style={{display: 'inline', position: 'absolute', top: '100%', left: '0%', right: '35%', color: 'white'}}>Need to Create an Account?</div>
             <button id='SIGNUP' type="submit" onClick={'handleSignUp'} style={{display: 'inline',
                 color: 'white',
                border: 'solid, 1px, white', fontWeight: 'bold', float: 'right' }}> Sign Up</button>
+      </div> */}
+      <div style={{fontSize: '14px', padding: '7px',
+      color: '#ffffff', width: '300px', fontHeight: 'normal', fontStretch: 'normal',
+      lineHeight: 'normal', letterSpacing: '-0.2px', textAlign: 'right',
+      display: 'inline', position: 'absolute', float: 'left', top: '1.5%', right: '0.5%'}}>
+      <div style={{display: 'inline', position: 'absolute', top: '100%', left: '0%', right: '35%'}}>Already have an Account?</div>
+        <button id='SIGNUP' type="submit" onClick={console.log('hi')} style={{display: 'inline',
+            color: 'white',
+          border: 'solid, 1px, white', fontWeight: 'bold', float: 'right' }}> Log In</button>
       </div>
       <Formik
         onSubmit={handleSubmit}
