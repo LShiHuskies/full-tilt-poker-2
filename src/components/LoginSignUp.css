@@ -1,0 +1,31 @@
+.CreateAccount {
+  font-size: 14px;
+  padding: 7px;
+  color: black;
+  width: 300px;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  text-align: right;
+  position: absolute;
+  float: left;
+  top: 1.5%;
+  display: inline;
+  right: 0.5%;
+}
+
+.NeedCreateAccount {
+  display: inline;
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  right: 35%;
+  color: white;
+}
+
+/* {fontSize: '14px', padding: '7px',
+    color: 'black', width: '300px', fontHeight: 'normal', fontStretch: 'normal',
+    lineHeight: 'normal', letterSpacing: '-0.2px', textAlign: 'right', position: 'absolute',
+    float: 'left', top: '1.5%', display: 'inline', right: '0.5%'}} */
+
+    /* style={{display: 'inline', position: 'absolute', top: '100%', left: '0%', right: '35%', color: 'white'} */

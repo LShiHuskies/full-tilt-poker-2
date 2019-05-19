@@ -10,7 +10,7 @@ class App extends Component {
     signUp: true
   }
 
-  handleSignup = () => {
+  handleSignUp = () => {
     if (this.state.signUp) {
       this.setState({
         signUp: false
@@ -27,8 +27,8 @@ class App extends Component {
         background: 'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqoEs6h9_A_YPYz4wunHTS5kzoqByBhJ4bGJeWMpS_va9W4tJ3)',
         backgroundRepeat: 'no-repeat', backgroundSize: 'cover', position: 'absolute', width: '100%', height: '100%' }}>
         { this.state.signUp
-        ? <SignUp handleSubmit={console.log('hi')} handleLogin={this.handleSignup} />
-        : <Login /> }
+        ? <SignUp handleSubmit={console.log('hi')} handleLogin={this.handleSignUp} />
+        : <Login handleSubmit={() => console.log('hi')} handleSignUp={this.handleSignUp} /> }
       </div>
     );
   }

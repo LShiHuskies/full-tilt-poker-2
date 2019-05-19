@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import { Card, CardContent } from '@material-ui/core/';
 
 import CreateUserForm from './CreateUserForm';
+import './LoginSignUp.css'
 
 const createSchema = Yup.object().shape({
   firstName: Yup
@@ -41,7 +42,7 @@ const SignUp = ({ handleSubmit, handleLogin }) => {
       top: '1.5%', right: '0.5%'}}>
       <div style={{display: 'inline', position: 'absolute', top: '100%', left: '0%', right: '35%'}}>
       Already have an Account?</div>
-        <button id='SIGNUP' type="submit" onClick={handleLogin} style={{display: 'inline',
+        <button className='SIGNUP' type="submit" onClick={handleLogin} style={{display: 'inline',
             color: 'white',
           border: 'solid, 1px, white', fontWeight: 'bold', float: 'right' }}> Log In</button>
       </div>
