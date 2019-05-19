@@ -1,7 +1,7 @@
 import React from 'react';
 import { TextField, Button } from '@material-ui/core/';
 
-const LoginForm = ({
+const CreateUserForm = ({
   handleSubmit,
   handleChange,
   handleBlur,
@@ -57,16 +57,6 @@ const LoginForm = ({
         error={touched.password && errors.password ? true : false}
         fullWidth
       />
-      <TextField
-        name="confirmation"
-        label="Confirmation"
-        type="password"
-        onChange={handleChange}
-        onBlur={handleBlur}
-        helperText={touched.confirmation && errors.confirmation ? errors.confirmation : null}
-        error={touched.confirmation && errors.confirmation ? true : false}
-        fullWidth
-      />
       <Button
         type="submit"
         variant="contained"
@@ -80,4 +70,4 @@ const LoginForm = ({
   )
 };
 
-export default LoginForm;
+export default CreateUserForm;
