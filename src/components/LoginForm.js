@@ -3,22 +3,18 @@ import { TextField, Button } from '@material-ui/core/';
 
 const LoginForm = ({
   handleSubmit,
-  values,
   handleChange,
   handleBlur,
   errors,
   touched,
   isValid,
-  setFieldvalue,
-  setFieldTouched,
 }) => {
   return (
-    <form onSubmit={handleSubmit} style={{ width: '50%', margin: '5% auto' }}>
+    <form onSubmit={handleSubmit} style={{ width: '50%', margin: '5% auto', backgroundColor: 'lightgray' }}>
       <TextField
         name="firstName"
         label="First Name"
         style={{ width: '50%' }}
-        value={values.firstName}
         onChange={handleChange}
         onBlur={handleBlur}
         helperText={touched.firstName && errors.firstName ? errors.firstName : null}
@@ -28,7 +24,6 @@ const LoginForm = ({
         name="lastName"
         label="Last Name"
         style={{ width: '50%' }}
-        value={values.lastName}
         onChange={handleChange}
         onBlur={handleBlur}
         helperText={touched.lastName && errors.lastName ? errors.lastName : null}
@@ -37,7 +32,6 @@ const LoginForm = ({
       <TextField
         name="userName"
         label="User Name"
-        value={values.UserName}
         onChange={handleChange}
         onBlur={handleBlur}
         helperText={touched.userName && errors.userName ? errors.userName : null}
@@ -47,7 +41,6 @@ const LoginForm = ({
       <TextField
         name="email"
         label="Email"
-        value={values.email}
         onChange={handleChange}
         onBlur={handleBlur}
         helperText={touched.email && errors.email ? errors.email : null}
@@ -58,7 +51,6 @@ const LoginForm = ({
         name="password"
         label="Password"
         type="password"
-        value={values.password}
         onChange={handleChange}
         onBlur={handleBlur}
         helperText={touched.password && errors.password ? errors.password : null}
@@ -69,7 +61,6 @@ const LoginForm = ({
         name="confirmation"
         label="Confirmation"
         type="password"
-        value={values.confirmation}
         onChange={handleChange}
         onBlur={handleBlur}
         helperText={touched.confirmation && errors.confirmation ? errors.confirmation : null}
@@ -81,7 +72,7 @@ const LoginForm = ({
         variant="contained"
         color="primary"
         disabled={!isValid}
-        style={{ float: 'right', marginTop: '5%' }}
+        style={{ marginTop: '5%', display: 'block', marginLeft: 'auto', marginRight: '0' }}
       >
       Submit
       </Button>

@@ -36,7 +36,7 @@ const Login = () => {
   }
   return (
     <div>
-      <Card>
+      <Card style={{ width: '40%', margin: '1% auto', backgroundColor: 'lightblue' }}>
         <CardContent>
           Welcome to Full-Tilt Poker 2.0
         </CardContent>
