@@ -24,11 +24,9 @@ const loginScehema = Yup.object().shape({
               Welcome Back!
             </CardContent>
         </Card>
-        <div className="CreateAccount">
+        <div className="Account">
             <div className="NeedCreateAccount">Need to Create an Account?</div>
-                <button className='SIGNUP' type="submit" onClick={handleSignUp} style={{display: 'inline',
-                    color: 'white',
-                border: 'solid, 1px, white', fontWeight: 'bold', float: 'right' }}> Sign Up</button>
+                <button className='SIGNUP' id="SignUp" type="submit" onClick={handleSignUp}> Sign Up</button>
         </div>
         <Formik
           onSubmit={handleSubmit}
