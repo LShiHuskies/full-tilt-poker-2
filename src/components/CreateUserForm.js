@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextField, Button } from '@material-ui/core/';
+import { TextField, Button, Card, CardContent } from '@material-ui/core/';
 
 const CreateUserForm = ({
   handleSubmit,
@@ -11,6 +11,9 @@ const CreateUserForm = ({
 }) => {
   return (
     <form onSubmit={handleSubmit} style={{ width: '50%', margin: '5% auto', backgroundColor: 'lightgray' }}>
+      <Card style={{ width: '30%', margin: '1% auto', backgroundColor: 'lightgray', border: 'none' }}>
+          Create New Account
+      </Card>
       <TextField
         name="firstName"
         label="First Name"
