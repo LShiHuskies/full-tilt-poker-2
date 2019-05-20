@@ -16,7 +16,7 @@ const LoginForm = ({
             Please Login
         </h4>
         <TextField
-          name="userName"
+          name="username"
           label="User Name"
           onChange={handleChange}
           onBlur={handleBlur}

@@ -7,7 +7,7 @@ import LoginForm from './LoginForm';
 import './LoginSignUp.css'
 
 const loginScehema = Yup.object().shape({
-    userName: Yup
+    username: Yup
       .string()
       .required("Please Enter a User Name"),
     password: Yup

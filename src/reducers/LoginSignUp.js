@@ -1,4 +1,4 @@
-import { CREATE_USER, SET_LOADING } from '../actions/CreateLoginActions';
+import { SET_LOADING, USER_CREATED } from '../actions/CreateLoginActions';
 
 const defaultState = {
   user: null,
@@ -9,18 +9,19 @@ export default function LoginOrSignUp(state = defaultState, action) {
     switch(action.type) {
 
         case SET_LOADING:
-            debugger;
+
           return {
-              ...state
+              ...state,
+              loading: true,
           }
 
+        case USER_CREATED:
 
-        case CREATE_USER:
-            debugger;
           return {
-            ...state,
-            loading: false,
-          };
+              ...state,
+              user: action.payload,
+              loading: false,
+          }
 
         default:
 
