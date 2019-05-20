@@ -16,7 +16,7 @@ const CreateUserForm = ({
           Create New Account
       </h4>
       <TextField
-        name="firstName"
+        name="firstname"
         label="First Name"
         style={{ width: '50%' }}
         onChange={handleChange}
@@ -25,7 +25,7 @@ const CreateUserForm = ({
         error={touched.firstName && errors.firstName ? true : false}
       />
       <TextField
-        name="lastName"
+        name="lastname"
         label="Last Name"
         style={{ width: '50%' }}
         onChange={handleChange}
@@ -34,7 +34,7 @@ const CreateUserForm = ({
         error={touched.lastName && errors.lastName ? true : false}
       />
       <TextField
-        name="userName"
+        name="username"
         label="User Name"
         onChange={handleChange}
         onBlur={handleBlur}

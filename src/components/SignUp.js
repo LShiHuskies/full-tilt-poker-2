@@ -7,13 +7,13 @@ import CreateUserForm from './CreateUserForm';
 import './LoginSignUp.css'
 
 const createSchema = Yup.object().shape({
-  firstName: Yup
+  firstname: Yup
     .string()
     .required("Please Enter Your First Name."),
-  lastName: Yup
+  lastname: Yup
     .string()
     .required('Please Enter Your Last Name'),
-  userName: Yup
+  username: Yup
     .string()
     .required("Please Enter a User Name"),
   password: Yup
