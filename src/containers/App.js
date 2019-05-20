@@ -5,7 +5,7 @@ import SignUp from '../components/SignUp';
 import Login from '../components/Login';
 import '../App.css';
 
-import { createUser } from '../actions/CreateLoginActions';
+import { createUser, loginUser } from '../actions/CreateLoginActions';
 
 class App extends Component {
   state = {
@@ -25,8 +25,13 @@ class App extends Component {
   }
 
   handleSubmit = (values) => {
-    this.props.createUser(values)
+    this.props.createUser(values);
   }
+
+  handleLogin = (values) => {
+    this.props.loginUser(values);
+  }
+
   render() {
     return (
       <div className="App" style={{
@@ -34,7 +39,7 @@ class App extends Component {
         backgroundRepeat: 'no-repeat', backgroundSize: 'cover', position: 'absolute', width: '100%', height: '100%' }}>
         { this.state.signUp
         ? <SignUp handleSubmit={this.handleSubmit} handleLogin={this.handleSignUp} />
-        : <Login handleSubmit={() => console.log('hi')} handleSignUp={this.handleSignUp} /> }
+        : <Login handleSubmit={this.handleLogin} handleSignUp={this.handleSignUp} /> }
       </div>
     );
   }
@@ -48,7 +53,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createUser: (data) => dispatch(createUser(data))
+    createUser: (data) => dispatch(createUser(data)),
+    loginUser: (data) => dispatch(loginUser(data))
   }
 }
 

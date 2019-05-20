@@ -20,8 +20,8 @@ const LoginForm = ({
           label="User Name"
           onChange={handleChange}
           onBlur={handleBlur}
-          helperText={touched.userName && errors.userName ? errors.userName : null}
-          error={touched.userName && errors.userName ? true : false}
+          helperText={touched.username && errors.username ? errors.username : null}
+          error={touched.username && errors.username ? true : false}
           fullWidth
         />
         <TextField

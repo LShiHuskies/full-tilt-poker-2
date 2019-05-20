@@ -21,8 +21,8 @@ const CreateUserForm = ({
         style={{ width: '50%' }}
         onChange={handleChange}
         onBlur={handleBlur}
-        helperText={touched.firstName && errors.firstName ? errors.firstName : null}
-        error={touched.firstName && errors.firstName ? true : false}
+        helperText={touched.firstname && errors.firstname ? errors.firstname : null}
+        error={touched.firstname && errors.firstname ? true : false}
       />
       <TextField
         name="lastname"
@@ -30,16 +30,16 @@ const CreateUserForm = ({
         style={{ width: '50%' }}
         onChange={handleChange}
         onBlur={handleBlur}
-        helperText={touched.lastName && errors.lastName ? errors.lastName : null}
-        error={touched.lastName && errors.lastName ? true : false}
+        helperText={touched.lastname && errors.lastname ? errors.lastname : null}
+        error={touched.lastname && errors.lastname ? true : false}
       />
       <TextField
         name="username"
         label="User Name"
         onChange={handleChange}
         onBlur={handleBlur}
-        helperText={touched.userName && errors.userName ? errors.userName : null}
-        error={touched.userName && errors.userName ? true : false}
+        helperText={touched.username && errors.username ? errors.username : null}
+        error={touched.username && errors.username ? true : false}
         fullWidth
       />
       <TextField

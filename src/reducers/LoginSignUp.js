@@ -1,4 +1,4 @@
-import { SET_LOADING, USER_CREATED } from '../actions/CreateLoginActions';
+import { SET_LOADING, USER_CREATED, USER_LOGGEDIN } from '../actions/CreateLoginActions';
 
 const defaultState = {
   user: null,
@@ -21,6 +21,14 @@ export default function LoginOrSignUp(state = defaultState, action) {
               ...state,
               user: action.payload,
               loading: false,
+          }
+
+        case USER_LOGGEDIN:
+          debugger;
+          return {
+            ...state,
+            user: action.payload,
+            loading: false
           }
 
         default:
