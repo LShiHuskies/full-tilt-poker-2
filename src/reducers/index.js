@@ -7,7 +7,7 @@ import LoginSignUp from './LoginSignUp';
 const rootReducer = combineReducers({
   initialState: counter,
   anotherState: characters,
-  LoginSignUp: LoginSignUp
+  LoginSignUp: LoginSignUp,
 });
 
 export default rootReducer;
