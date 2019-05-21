@@ -5,11 +5,18 @@ import SignUp from '../components/SignUp';
 import Login from '../components/Login';
 import '../App.css';
 
-import { createUser, loginUser } from '../actions/CreateLoginActions';
+import { createUser, loginUser, userLoggedIn } from '../actions/CreateLoginActions';
 
 class App extends Component {
   state = {
     signUp: true
+  }
+
+  componentDidMount() {
+    if(!!localStorage.getItem('token')){
+      const user = JSON.parse(atob(localStorage.getItem('token').split('.')[1]));
+      this.props.userLoggedIn(user);
+    }
   }
 
   handleSignUp = () => {
@@ -34,9 +41,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App" style={{
-        background: 'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqoEs6h9_A_YPYz4wunHTS5kzoqByBhJ4bGJeWMpS_va9W4tJ3)',
-        backgroundRepeat: 'no-repeat', backgroundSize: 'cover', position: 'absolute', width: '100%', height: '100%' }}>
+      <div className="App" id="AppWorld">
         { this.state.signUp
         ? <SignUp handleSubmit={this.handleSubmit} handleLogin={this.handleSignUp} />
         : <Login handleSubmit={this.handleLogin} handleSignUp={this.handleSignUp} /> }
@@ -46,15 +51,18 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
+  const { user, loading } = state.LoginSignUp;
   return {
-    state
+    user,
+    loading,
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     createUser: (data) => dispatch(createUser(data)),
-    loginUser: (data) => dispatch(loginUser(data))
+    loginUser: (data) => dispatch(loginUser(data)),
+    userLoggedIn: (data) => dispatch(userLoggedIn(data))
   }
 }
 

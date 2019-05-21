@@ -24,7 +24,7 @@ export default function LoginOrSignUp(state = defaultState, action) {
           }
 
         case USER_LOGGEDIN:
-          debugger;
+          localStorage.setItem('token', action.payload.token)
           return {
             ...state,
             user: action.payload,
