@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import SignUp from '../components/SignUp';
 import Login from '../components/Login';
+import MainLobby from './MainLobby';
 import '../App.css';
 
 import { createUser, loginUser, userLoggedIn } from '../actions/CreateLoginActions';
@@ -41,10 +42,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App" id="AppWorld">
-        { this.state.signUp
-        ? <SignUp handleSubmit={this.handleSubmit} handleLogin={this.handleSignUp} />
-        : <Login handleSubmit={this.handleLogin} handleSignUp={this.handleSignUp} /> }
+      <div>
+        { !this.props.user ? <div className="App" id="AppWorld">
+        { this.state.signUp ? <SignUp handleSubmit={this.handleSubmit} handleLogin={this.handleSignUp} />
+          : <Login handleSubmit={this.handleLogin} handleSignUp={this.handleSignUp} /> }
+         </div> :
+        <MainLobby /> }
       </div>
     );
   }
