@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Card, CardContent } from '@material-ui/core/';
+import ReactTable from 'react-table';
 
 
 
@@ -7,7 +9,12 @@ import { connect } from 'react-redux';
 class MainLobby extends Component {
   render() {
     return (
-      <div>
+      <div className="App" id="MainLobby">
+      <Card style={{ width: '30%', margin: '1% auto', backgroundColor: 'lightblue' }}>
+        <CardContent>
+          Welcome {this.props.user.name || this.props.user.username}
+        </CardContent>
+      </Card>
           Hello
       </div>
     )
@@ -16,7 +23,7 @@ class MainLobby extends Component {
 
 const mapStateToProps = (state) => {
   return {
-      state
+      user: state.LoginSignUp.user
   }
 }
 
