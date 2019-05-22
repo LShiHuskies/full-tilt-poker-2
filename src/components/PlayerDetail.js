@@ -1,10 +1,15 @@
 import React from 'react';
+import { CardContent, Button } from '@material-ui/core/';
 
-const PlayerDetail = () => {
+const PlayerDetail = ({ user }) => {
   return (
-    <div>
-      hello
-    </div>
+      <Button style={{ height: '100%', width: '100%' }}>
+        <CardContent>
+          Username: { user.username } <br />
+          Name: { user.firstname + ' ' + user.lastname } <br />
+          Email: { user.email }
+        </CardContent>
+      </Button>
   )
 }
 

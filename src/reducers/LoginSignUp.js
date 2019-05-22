@@ -1,8 +1,9 @@
-import { SET_LOADING, USER_CREATED, USER_LOGGEDIN, SET_USER_INFO } from '../actions/CreateLoginActions';
+import { SET_LOADING, USER_CREATED, USER_LOGGEDIN, SET_USER_INFO, SET_PLAYER_LOADING } from '../actions/CreateLoginActions';
 
 const defaultState = {
   user: null,
   loading: false,
+  playerLoading: true,
 }
 
 export default function LoginOrSignUp(state = defaultState, action) {
@@ -13,6 +14,12 @@ export default function LoginOrSignUp(state = defaultState, action) {
           return {
               ...state,
               loading: true,
+          }
+
+        case SET_PLAYER_LOADING:
+          return {
+            ...state,
+            loading: true,
           }
 
         case USER_CREATED:
@@ -38,7 +45,7 @@ export default function LoginOrSignUp(state = defaultState, action) {
           return {
             ...state,
             user: action.payload,
-            loading: false
+            playerLoading: false
           }
 
         default:

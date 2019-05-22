@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Card, CardContent, Button } from '@material-ui/core/';
+import { Card, Button } from '@material-ui/core/';
 import ReactTable from 'react-table';
 
 import PlayerDetailContainer from './PlayerDetailContainer';

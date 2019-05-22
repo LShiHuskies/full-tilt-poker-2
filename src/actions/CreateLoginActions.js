@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 export const SET_LOADING = 'SET_LOADING';
+export const SET_PLAYER_LOADING = 'SET_PLAYER_LOADING';
 export const USER_CREATED = 'USER_CREATED';
 export const USER_LOGGEDIN = 'USER_LOGGEDIN';
 export const USER_INFO = 'USER_INFO';
@@ -64,6 +65,12 @@ export const getUserInfo = (data) => (dispatch) => {
         })
   } catch (error) {
     console.error(error)
+  }
+}
+
+export const setPlayerLoading = () => {
+  return {
+    type: SET_PLAYER_LOADING,
   }
 }
 
