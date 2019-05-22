@@ -3,6 +3,8 @@ import axios from 'axios';
 export const SET_LOADING = 'SET_LOADING';
 export const USER_CREATED = 'USER_CREATED';
 export const USER_LOGGEDIN = 'USER_LOGGEDIN';
+export const USER_INFO = 'USER_INFO';
+export const SET_USER_INFO = 'SET_USER_INFO';
 
 export const createUser = (data) => (dispatch) => {
     dispatch(setLoading());
@@ -44,4 +46,30 @@ export const userLoggedIn = (data) => {
       type: USER_LOGGEDIN,
       payload: data
     }
+}
+
+export const getUserInfo = (data) => (dispatch) => {
+  dispatch(setLoading());
+
+  try {
+    const config = { headers: {
+        'Content-type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': localStorage.getItem('token')
+      }
+    }
+    axios.get(`http://localhost:3000/api/users/${data.id}`, config)
+        .then(response => {
+          dispatch(setUserInfo(response.data));
+        })
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+export const setUserInfo = (data) => {
+  return {
+      type: SET_USER_INFO,
+      payload: data
+  }
 }

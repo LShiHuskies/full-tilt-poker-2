@@ -1,4 +1,4 @@
-import { SET_LOADING, USER_CREATED, USER_LOGGEDIN } from '../actions/CreateLoginActions';
+import { SET_LOADING, USER_CREATED, USER_LOGGEDIN, SET_USER_INFO } from '../actions/CreateLoginActions';
 
 const defaultState = {
   user: null,
@@ -27,6 +27,14 @@ export default function LoginOrSignUp(state = defaultState, action) {
         if(!localStorage.getItem('token')){
           localStorage.setItem('token', action.payload.token)
         }
+          return {
+            ...state,
+            user: action.payload,
+            loading: false
+          }
+        
+        case SET_USER_INFO:
+
           return {
             ...state,
             user: action.payload,
