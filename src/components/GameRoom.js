@@ -18,18 +18,8 @@ class GameRoom extends Component {
 
   render() {
     return (
-      <div style={{ left: "10vw", top: "10vh", position: "absolute" }}>
-        <button
-          style={{ padding: "1.5em", margin: "2em" }}
-        >
-          Deal
-        </button>
-        <Deck
-          board={["3s", "Qh", "As"]}
-          boardXoffset={375} // X axis pixel offset for dealing board
-          boardYoffset={200} // Y axis pixel offset for dealing board
-          size={200} // card height in pixels
-        />
+      <div>
+        <img src="http://casinoglobalclub.com/wp-content/uploads/2017/03/cf8fbf0f6c10451f5ad6fcb83f49276c.jpg" style={{ width: '100%' }} />
       </div>
     );
   }
