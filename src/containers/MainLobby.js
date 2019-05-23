@@ -6,6 +6,9 @@ import ReactTable from 'react-table';
 import PlayerDetailContainer from './PlayerDetailContainer';
 
 
+import GameRoomContainer from './GameRoomContainer';
+
+
 
 
 class MainLobby extends Component {
@@ -23,6 +26,7 @@ class MainLobby extends Component {
             <PlayerDetailContainer />
         </div>
         </span>
+        <GameRoomContainer />
       </div>
     )
   }
