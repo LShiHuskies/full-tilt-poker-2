@@ -27,7 +27,7 @@ class MainLobby extends Component {
         </div>
         </span>
         {/* <GameRoomContainer /> */}
-        <GameList style={this.props.style} />
+        <GameList />
       </div>
     )
   }

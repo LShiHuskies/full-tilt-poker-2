@@ -2,7 +2,7 @@ import { SET_LOADING } from '../actions/GameActions';
 
 const defaultState = {
     style: 'ringGame',
-    loading: false,
+    loading: true,
   }
 
   export default function LoginOrSignUp(state = defaultState, action) {

@@ -22,7 +22,7 @@ dispatch(setLoading());
             style: data
           }
         }
-        axios.get(`http://localhost:3000/api/game_rooms`, config)
+        axios.get(`http://localhost:3002/api/game_rooms`, config)
             .then(response => {
               // this.props.dispatch(setUserInfo(response.data));
             })
