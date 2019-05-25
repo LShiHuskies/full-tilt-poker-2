@@ -8,12 +8,12 @@ import axios from 'axios';
 
 class GameRoom extends Component {
   componentDidMount() {
-      try {
-      axios.get('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
-        .then(response => console.log(response));
-      } catch(error) {
-          console.log(error);
-      }
+      // try {
+      // axios.get('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
+      //   .then(response => console.log(response));
+      // } catch(error) {
+      //     console.log(error);
+      // }
   }
 
   render() {

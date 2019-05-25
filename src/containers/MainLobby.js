@@ -4,6 +4,7 @@ import { Card, Button } from '@material-ui/core/';
 import ReactTable from 'react-table';
 
 import PlayerDetailContainer from './PlayerDetailContainer';
+import GameList from './GameList';
 
 
 import GameRoomContainer from './GameRoomContainer';
@@ -19,14 +20,15 @@ class MainLobby extends Component {
         <span>
         <Card style={{ width: '60%', height: '20%', backgroundColor: 'transparent', border: 'none' }}>
             <Button color="primary" fullWidth style={{ height: '33%', backgroundColor: 'lightGray' }}>Ring Game</Button>
-            <Button color="primary" fullWidth style={{ height: '33%', backgroundColor: 'lightGray' }}>Sit & Go</Button> <br />
+            <Button color="primary" fullWidth style={{ height: '33%', backgroundColor: 'lightGray' }}>Sit & Go</Button>
             <Button color="primary" fullWidth style={{ height: '33%', backgroundColor: 'lightGray' }}>Heads Up</Button>
         </Card>
         <div style={{ position: 'absolute', top: '0', right: '0', width: '20%', height: '20%' }} >
             <PlayerDetailContainer />
         </div>
         </span>
-        <GameRoomContainer />
+        {/* <GameRoomContainer /> */}
+        <GameList type={"ringGame"} />
       </div>
     )
   }
