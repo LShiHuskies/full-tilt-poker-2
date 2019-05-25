@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { CircularProgress } from '@material-ui/core/';
 import ReactTable from 'react-table';
+import 'react-table/react-table.css'
 
 
 
@@ -19,10 +20,30 @@ class GameList extends Component {
     if (loading) {
       return <CircularProgress />
     }
+    debugger;
+
+    const columns = [
+    {
+      Header: 'Name',
+      accessor: 'name' // String-based value accessors!
+    },
+    {
+      Header: 'Small Blind',
+      accessor: 'smallblind'
+    },
+    {
+      Header: 'Big Blind',
+      accessor: 'bigblind'
+    }
+  ]
+
 
     return (
-      <div>
-          hello
+      <div style={{ backgroundColor: 'white' }}>
+          <ReactTable
+            data={this.props.listgames}
+            columns={columns}
+          />
       </div>
     )
   }
