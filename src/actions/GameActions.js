@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 export const SET_LOADING = 'SET_LOADING';
+export const LISTED_GAMES = 'LISTED_GAMES';
 
 export const setLoading = () => {
     return { 
@@ -24,11 +25,16 @@ dispatch(setLoading());
         }
         axios.get(`http://localhost:3002/api/game_rooms`, config)
             .then(response => {
-              // this.props.dispatch(setUserInfo(response.data));
+              dispatch(listGames(response.data));
             })
       } catch (error) {
         console.error(error)
       }
 }
 
-
+export const listGames = (data) => {
+  return {
+      type: LISTED_GAMES,
+      payload: data
+  }
+}

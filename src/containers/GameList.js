@@ -19,6 +19,7 @@ class GameList extends Component {
     if (loading) {
       return <CircularProgress />
     }
+
     return (
       <div>
           hello
@@ -31,7 +32,8 @@ const mapStateToProps = (state) => {
   return {
       user: state.LoginSignUp.user,
       style: state.GameReducer.style,
-      loading: state.GameReducer.loading
+      loading: state.GameReducer.loading,
+      listgames: state.GameReducer.listgames
   }
 }
 

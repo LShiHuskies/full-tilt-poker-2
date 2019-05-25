@@ -1,8 +1,9 @@
-import { SET_LOADING } from '../actions/GameActions';
+import { SET_LOADING, LISTED_GAMES } from '../actions/GameActions';
 
 const defaultState = {
     style: 'ringGame',
-    loading: true,
+    loading: false,
+    listgames: []
   }
 
   export default function LoginOrSignUp(state = defaultState, action) {
@@ -15,8 +16,15 @@ const defaultState = {
               loading: true,
           }
 
-        default:
+        case LISTED_GAMES:
 
+          return {
+              ...state,
+              listgames: action.payload,
+              loading: false
+          }
+
+        default:
           return {
               ...state
           }
