@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Card, Button } from '@material-ui/core/';
-import ReactTable from 'react-table';
 
 import PlayerDetailContainer from './PlayerDetailContainer';
 import GameList from './GameList';
@@ -28,7 +27,7 @@ class MainLobby extends Component {
         </div>
         </span>
         {/* <GameRoomContainer /> */}
-        <GameList type={"ringGame"} />
+        <GameList style={this.props.style} />
       </div>
     )
   }
@@ -36,7 +35,7 @@ class MainLobby extends Component {
 
 const mapStateToProps = (state) => {
   return {
-      user: state.LoginSignUp.user
+      user: state.LoginSignUp.user,
   }
 }
 
