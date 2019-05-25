@@ -34,6 +34,9 @@ class GameList extends Component {
     {
       Header: 'Big Blind',
       accessor: 'bigblind'
+    },
+    {
+      Header: 'Seats'
     }
   ]
 
@@ -43,6 +46,8 @@ class GameList extends Component {
           <ReactTable
             data={this.props.listgames}
             columns={columns}
+            defaultPageSize={4}
+            minRows={3}
           />
       </div>
     )
