@@ -24,8 +24,12 @@ class GameList extends Component {
 
     const columns = [
     {
+      Header: 'Table',
+      accessor: 'id'
+    },
+    {
       Header: 'Name',
-      accessor: 'name' // String-based value accessors!
+      accessor: 'name'
     },
     {
       Header: 'Small Blind',
@@ -48,6 +52,12 @@ class GameList extends Component {
             columns={columns}
             defaultPageSize={4}
             minRows={3}
+            defaultSorted={[
+              {
+                id: "id",
+                desc: false
+              }
+            ]}
           />
       </div>
     )
