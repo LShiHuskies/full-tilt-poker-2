@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { CircularProgress } from '@material-ui/core/';
+import { CircularProgress, Button } from '@material-ui/core/';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css'
 
@@ -20,7 +20,6 @@ class GameList extends Component {
     if (loading) {
       return <CircularProgress />
     }
-    debugger;
 
     const columns = [
     {
@@ -41,17 +40,25 @@ class GameList extends Component {
     },
     {
       Header: 'Seats'
+    },
+    {
+      Header: 'Select Game',
+      Cell: row  => (
+        <Button color="primary" style={{ backgroundColor: 'lightBlue' }} onClick={() => console.log(row.original)}>
+          Let's Play
+        </Button>
+      )
     }
   ]
 
 
     return (
-      <div style={{ backgroundColor: 'white' }}>
+      <div>
           <ReactTable
             data={this.props.listgames}
             columns={columns}
-            defaultPageSize={4}
-            minRows={3}
+            defaultPageSize={5}
+            minRows={5}
             defaultSorted={[
               {
                 id: "id",
