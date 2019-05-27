@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+
 import SignUp from '../components/SignUp';
 import Login from '../components/Login';
 import MainLobby from './MainLobby';
@@ -47,7 +48,8 @@ class App extends Component {
         { this.state.signUp ? <SignUp handleSubmit={this.handleSubmit} handleLogin={this.handleSignUp} />
           : <Login handleSubmit={this.handleLogin} handleSignUp={this.handleSignUp} /> }
          </div> :
-        <MainLobby /> }
+            <MainLobby />
+        }
       </div>
     );
   }
