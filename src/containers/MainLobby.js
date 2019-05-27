@@ -6,7 +6,6 @@ import PlayerDetailContainer from './PlayerDetailContainer';
 import GameList from './GameList';
 import { getStyleOfGame } from '../actions/GameActions';
 
-import GameRoomContainer from './GameRoomContainer';
 
 
 
@@ -30,7 +29,6 @@ class MainLobby extends Component {
             <PlayerDetailContainer />
         </div>
         </span>
-        {/* <GameRoomContainer /> */}
         <GameList />
       </div>
     )

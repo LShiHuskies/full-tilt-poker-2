@@ -13,18 +13,17 @@ import reducers from './reducers';
 import GameRoomContainer from './containers/GameRoomContainer';
 
 const store = createStore(
-    reducers,
-    applyMiddleware(thunk)
-    )
-// console.log(store.getState());
+  reducers,
+  applyMiddleware(thunk)
+)
 
 const routing = (
- <Provider store={store}>
+  <Provider store={store}>
     <Router>
       <div>
         <Switch>
           <Route exact path="/" component={App} />
-          <Route exact path="/game" component={GameRoomContainer} />
+          <Route exact path="/game/:id" component={GameRoomContainer} />
         </Switch>
       </div>
     </Router>
