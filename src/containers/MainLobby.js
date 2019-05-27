@@ -10,6 +10,7 @@ import { getStyleOfGame } from '../actions/GameActions';
 
 
 
+
 class MainLobby extends Component {
 
   handleStyle = (style) => {

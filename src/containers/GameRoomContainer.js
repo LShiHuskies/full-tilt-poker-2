@@ -5,6 +5,9 @@ import GameRoom from '../components/GameRoom';
 
 
 class GameRoomContainer extends Component {
+  componentDidMount() {
+    
+  }
   render() {
     return (
       <div>

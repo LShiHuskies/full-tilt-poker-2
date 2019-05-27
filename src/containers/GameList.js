@@ -5,6 +5,7 @@ import ReactTable from 'react-table';
 import 'react-table/react-table.css'
 
 
+import { withRouter } from 'react-router'
 
 import { getStyleOfGame } from '../actions/GameActions';
 
@@ -13,6 +14,10 @@ class GameList extends Component {
   componentDidMount() {
     const { getStyleOfGame, style } = this.props;
     getStyleOfGame(style);
+  }
+
+  chooseGameRoom = (row) => {
+    this.props.history.push(`/gameroom/${row.id}`)
   }
 
   render() {
@@ -44,7 +49,7 @@ class GameList extends Component {
     {
       Header: 'Select Game',
       Cell: row  => (
-        <Button color="primary" style={{ backgroundColor: 'lightBlue' }} onClick={() => console.log(row.original)}>
+        <Button color="primary" style={{ backgroundColor: 'lightBlue' }} onClick={() => this.chooseGameRoom(row.original)}>
           Let's Play
         </Button>
       )
@@ -86,4 +91,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(GameList);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(GameList));

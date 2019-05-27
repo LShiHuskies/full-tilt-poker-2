@@ -23,7 +23,7 @@ const routing = (
       <div>
         <Switch>
           <Route exact path="/" component={App} />
-          <Route exact path="/game/:id" component={GameRoomContainer} />
+          <Route exact path="/gameroom/:id" component={GameRoomContainer} />
         </Switch>
       </div>
     </Router>
