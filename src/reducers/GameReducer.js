@@ -5,7 +5,8 @@ const defaultState = {
     loading: false,
     chooseGameLoading: false,
     listgames: [],
-    chosenGameRoom: null
+    chosenGameRoom: null,
+    defaultCardBack: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBSevncA2heKowUFZb8QoNnY1H5TNRwnfjeR2jWQ2YwSPhUGE4'
   }
 
   export default function LoginOrSignUp(state = defaultState, action) {
