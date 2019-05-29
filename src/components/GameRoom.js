@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import Deck from "react-poker";
 // import "react-poker/styles.css"
 import axios from 'axios';
@@ -26,14 +25,26 @@ class GameRoom extends Component {
       // }
   }
 
+  handleClick = () => {
+    console.log('hi')
+    if (this.state.empty === 'http://blogs.rrc.ca/wellness/wp-content/uploads/2014/03/easy-button.png') {
+      this.setState({
+        empty: 'http://www.directoryonlinepoker.com/images/linux250x264.gif'
+      });
+    } else {
+      this.setState({
+        empty: 'http://blogs.rrc.ca/wellness/wp-content/uploads/2014/03/easy-button.png'
+      });
+    }
+  }
+
 
   render() {
 
     return (
       <div style={{ backgroundSize: 'cover', backgroundRepeat: 'no-repeat' , backgroundImage: "url(http://casinoglobalclub.com/wp-content/uploads/2017/03/cf8fbf0f6c10451f5ad6fcb83f49276c.jpg)", width: '100%', height: '750px' }}>
-        {/* <img src="http://casinoglobalclub.com/wp-content/uploads/2017/03/cf8fbf0f6c10451f5ad6fcb83f49276c.jpg" style={{ width: '100%' }} /> */}
-        {/* <img src={this.state.empty} alt="empty" /> */}
-        <img src={this.state.empty} alt="Sit Down" />
+        <img onClick={this.handleClick} src={this.state.empty} alt="Sit Down" style={{ marginTop: '25%', width: '100px' }} />
+        <img onClick={this.handleClick} src={this.state.empty} alt="Sit Down" style={{ marginTop: '0%', width: '100px', marginLeft: '85%' }} />
       </div>
     );
   }
