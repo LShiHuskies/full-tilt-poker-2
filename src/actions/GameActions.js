@@ -31,7 +31,7 @@ dispatch(setLoading());
             style: data
           }
         }
-        axios.get(`http://localhost:3002/api/game_rooms`, config)
+        axios.get(`http://localhost:3000/api/game_rooms`, config)
             .then(response => {
               dispatch(listGames(response.data));
             })
@@ -58,7 +58,7 @@ export const chooseGameRoom = (id) => (dispatch) => {
             'Authorization': localStorage.getItem('token')
           },
         }
-        axios.get(`http://localhost:3002/api/game_rooms/${id}`, config)
+        axios.get(`http://localhost:3000/api/game_rooms/${id}`, config)
             .then(response => {
                 dispatch(setChosenGameRoom(response.data))
             })
@@ -72,4 +72,15 @@ export const setChosenGameRoom = (data) => {
       type: CHOSEN_GAME_ROOM,
       payload: data
   }
+}
+
+export const getCards = (deckID) => (dispatch) => {
+    try {
+        axios.get(`https://deckofcardsapi.com/api/deck/${deckID}/draw/?count=2`)
+            .then(response => {
+                debugger;
+            })
+      } catch (error) {
+        console.error(error)
+      }
 }
