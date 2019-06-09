@@ -26,7 +26,6 @@ class GameRoom extends Component {
   }
 
   handleClick = () => {
-    console.log('hi')
     if (this.state.empty === 'http://blogs.rrc.ca/wellness/wp-content/uploads/2014/03/easy-button.png') {
       this.setState({
         empty: 'http://www.directoryonlinepoker.com/images/linux250x264.gif'

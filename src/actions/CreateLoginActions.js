@@ -43,6 +43,7 @@ export const loginUser = (data) => (dispatch) => {
 }
 
 export const userLoggedIn = (data) => {
+  debugger;
     return {
       type: USER_LOGGEDIN,
       payload: data

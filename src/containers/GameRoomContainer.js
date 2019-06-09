@@ -6,12 +6,17 @@ import axios from 'axios';
 import GameRoom from '../components/GameRoom';
 
 import { chooseGameRoom, getCards } from '../actions/GameActions';
+import { userLoggedIn } from '../actions/CreateLoginActions';
 
 
 class GameRoomContainer extends Component {
   componentDidMount() {
     const { params } = this.props.match;
     this.props.chooseGameRoom(params.id);
+    if(!!localStorage.getItem('token')){
+      const user = JSON.parse(atob(localStorage.getItem('token').split('.')[1]));
+      this.props.userLoggedIn(user);
+    }
   }
 
   handleClick = () => {
@@ -31,7 +36,6 @@ class GameRoomContainer extends Component {
 
   }
   render() {
-    console.log(this.props.chosenGameRoom);
     return (
       <div>
         <GameRoom />
@@ -44,14 +48,16 @@ class GameRoomContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    chosenGameRoom: state.GameReducer.chosenGameRoom
+    chosenGameRoom: state.GameReducer.chosenGameRoom,
+    user: state.LoginSignUp.user
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     chooseGameRoom: (id) => dispatch(chooseGameRoom(id)),
-    getCards: (deckId) => dispatch(getCards(deckId))
+    getCards: (deckId) => dispatch(getCards(deckId)),
+    userLoggedIn: (data) => dispatch(userLoggedIn(data))
   }
 }
 
