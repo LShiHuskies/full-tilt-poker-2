@@ -38,7 +38,9 @@ class GameRoomContainer extends Component {
   render() {
     return (
       <div>
-        <GameRoom />
+        <GameRoom
+          user={this.props.user}
+        />
         <button onClick={this.handleClick}>hello</button>
         <button onClick={this.handleQuickly}>Do a quick reshuffle</button>
       </div>

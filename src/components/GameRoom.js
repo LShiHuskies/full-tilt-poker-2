@@ -35,6 +35,8 @@ class GameRoom extends Component {
         empty: 'http://blogs.rrc.ca/wellness/wp-content/uploads/2014/03/easy-button.png'
       });
     }
+
+
   }
 
 
